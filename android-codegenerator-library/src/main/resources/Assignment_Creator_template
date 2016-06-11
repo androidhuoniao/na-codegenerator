@@ -1,0 +1,2 @@
+        holder.${RESOURCE_PREFIX}${RESOURCE_NAME} = (${RESOURCE_TYPE}) view.${CONTAINER_PREFIX}findViewById
+        (${RESOURCE_ID});

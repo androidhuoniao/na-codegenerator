@@ -1,0 +1,18 @@
+.classpath
+.project
+.settings
+target
+
+# SQLite local database files.
+*.db
+*.exe
+
+# intelij files
+*.iml
+/.idea
+/.idea/*
+
+# MacOS
+.DS_Store
+
+

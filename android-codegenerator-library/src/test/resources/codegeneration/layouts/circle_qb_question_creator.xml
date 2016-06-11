@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ik_white"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/ds10">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/fromAuthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ds16"
+            android:includeFontPadding="false"
+            android:lineSpacingMultiplier="1.2"
+            android:paddingLeft="@dimen/ds24"
+            android:text="@string/circle_from_author"
+            android:textColor="@color/ik_common_font_paragraph_main"
+            android:textSize="@dimen/fontsize26"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ds16"
+        android:includeFontPadding="false"
+        android:paddingLeft="@dimen/ds24"
+        android:paddingRight="@dimen/ds24"
+        android:textColor="@color/ik_common_font_title_main"
+        android:textSize="@dimen/fontsize32"
+        android:textStyle="bold"
+        tools:text="在百度工作是一种什么体验" />
+
+    <TextView
+        android:id="@+id/content_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ds16"
+        android:includeFontPadding="false"
+        android:lineSpacingMultiplier="1.2"
+        android:paddingLeft="@dimen/ds24"
+        android:paddingRight="@dimen/ds24"
+        android:textColor="@color/ik_common_font_title_sub"
+        android:textSize="@dimen/fontsize26"
+        tools:text="在百度工作是什么经验，我也不知道，我我只是知道百度有很多很多的人，很多很多得意员工，很多很多的大楼，很多很多的汽车，很多很多钱，很多很多的，狠毒哦很多u哦啊的萨芬据鞍读书发" />
+
+    <LinearLayout
+        android:id="@+id/pic_container_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ds16"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/ds24"
+        android:paddingRight="@dimen/ds24"
+        android:visibility="gone">
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ds24"
+        android:paddingLeft="@dimen/ds24"
+        android:paddingRight="@dimen/ds24">
+
+        <TextView
+            android:id="@+id/tag_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/ds20"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/ik_common_tag_a"
+            android:textSize="@dimen/fontsize24" />
+
+        <TextView
+            android:id="@+id/reply_count_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/ds20"
+            android:layout_toRightOf="@+id/tag_tv"
+            android:singleLine="true"
+            android:textColor="@color/ik_common_font_paragraph_main"
+            android:textSize="@dimen/fontsize24" />
+
+        <TextView
+            android:id="@+id/view_count_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/ds20"
+            android:layout_toRightOf="@+id/reply_count_tv"
+            android:singleLine="true"
+            android:textColor="@color/ik_common_font_paragraph_main"
+            android:textSize="@dimen/fontsize24" />
+
+
+        <TextView
+            android:id="@+id/date_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:singleLine="true"
+            android:textColor="@color/ik_common_font_paragraph_main"
+            android:textSize="@dimen/fontsize24"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/bottom_divider_view"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="@dimen/ds24"
+        android:background="@color/ik_common_line_c" />
+
+</LinearLayout>

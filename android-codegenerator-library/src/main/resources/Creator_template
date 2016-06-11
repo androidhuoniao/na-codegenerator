@@ -1,0 +1,34 @@
+${PACKAGE_NAME}
+
+import com.baidu.adapter.CommonItemCreator;
+import com.baidu.adapter.CommonViewHolder;
+import com.baidu.iknow.yap.annotations.BindItem;
+
+import android.content.Context;
+import android.view.View;
+${IMPORTS}
+
+@BindItem(${BEAN}.class)
+public class ${CLASS_NAME} extends CommonItemCreator<${BEAN},${CLASS_NAME}.ViewHolder> {
+
+    public ${CLASS_NAME}() {
+        super(R.layout.${RESOURCE_NAME});
+    }
+
+    public ViewHolder applyViewsToHolder(Context context, View view){
+        ViewHolder holder = new ViewHolder();
+        holder.topContentView = view;
+        ${ASSIGNMENTS}
+        return holder;
+    }
+
+    public void setupItemView(Context context,ViewHolder holder,${BEAN} info,int postion){
+
+    }
+
+    public static class ViewHolder extends CommonViewHolder {
+        private View topContentView;
+        ${FIELDS}
+    }
+
+}
