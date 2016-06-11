@@ -28,7 +28,7 @@ public class CreatorAction extends LayoutAction {
 
     @Override
     protected String getResourceName() {
-        return "Creator";
+        return "";
     }
 
     @Override
