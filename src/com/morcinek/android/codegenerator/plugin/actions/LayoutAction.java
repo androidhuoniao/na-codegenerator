@@ -1,5 +1,12 @@
 package com.morcinek.android.codegenerator.plugin.actions;
 
+import java.io.IOException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPathExpressionException;
+
+import org.xml.sax.SAXException;
+
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -18,24 +25,19 @@ import com.morcinek.android.codegenerator.plugin.utils.ClipboardHelper;
 import com.morcinek.android.codegenerator.plugin.utils.PackageHelper;
 import com.morcinek.android.codegenerator.plugin.utils.PathHelper;
 import com.morcinek.android.codegenerator.plugin.utils.ProjectHelper;
-import org.xml.sax.SAXException;
-
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.xpath.XPathExpressionException;
-import java.io.IOException;
 
 /**
  * Copyright 2014 Tomasz Morcinek. All rights reserved.
  */
 public abstract class LayoutAction extends AnAction {
 
-    private final ErrorHandler errorHandler = new ErrorHandler();
+    protected final ErrorHandler errorHandler = new ErrorHandler();
 
-    private final PackageHelper packageHelper = new PackageHelper();
+    protected final PackageHelper packageHelper = new PackageHelper();
 
-    private final ProjectHelper projectHelper = new ProjectHelper();
+    protected final ProjectHelper projectHelper = new ProjectHelper();
 
-    private final PathHelper pathHelper = new PathHelper();
+    protected final PathHelper pathHelper = new PathHelper();
 
     @Override
     public void actionPerformed(AnActionEvent event) {
@@ -49,7 +51,8 @@ public abstract class LayoutAction extends AnAction {
         }
     }
 
-    private void showCodeDialog(AnActionEvent event, final Project project, final VirtualFile selectedFile, Settings settings) throws ParserConfigurationException, SAXException, XPathExpressionException, IOException {
+    protected void showCodeDialog(AnActionEvent event, final Project project, final VirtualFile selectedFile, Settings
+            settings) throws ParserConfigurationException, SAXException, XPathExpressionException, IOException {
         CodeGeneratorController codeGeneratorController = new CodeGeneratorController(getTemplateName(), getResourceProvidersFactory());
         String generatedCode = codeGeneratorController.generateCode(project, selectedFile, event.getData(PlatformDataKeys.EDITOR));
         final CodeDialogBuilder codeDialogBuilder = new CodeDialogBuilder(project,
@@ -78,7 +81,8 @@ public abstract class LayoutAction extends AnAction {
         }
     }
 
-    private void createFileWithGeneratedCode(CodeDialogBuilder codeDialogBuilder, VirtualFile selectedFile, Project project) throws IOException {
+    protected void createFileWithGeneratedCode(CodeDialogBuilder codeDialogBuilder, VirtualFile selectedFile, Project
+            project) throws IOException {
         if (codeDialogBuilder.getSourcePath() == null) {
             DialogsFactory.showMissingSourcePathDialog(project);
         } else {
@@ -113,7 +117,7 @@ public abstract class LayoutAction extends AnAction {
         return pathHelper.getFolderPath(sourcePath, packageName);
     }
 
-    private String getFinalCode(CodeDialogBuilder codeDialogBuilder) {
+    protected String getFinalCode(CodeDialogBuilder codeDialogBuilder) {
         String packageName = codeDialogBuilder.getPackage();
         String modifiedCode = codeDialogBuilder.getModifiedCode();
         return pathHelper.getMergedCodeWithPackage(packageName, modifiedCode);

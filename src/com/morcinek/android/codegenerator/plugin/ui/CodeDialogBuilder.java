@@ -1,6 +1,16 @@
 package com.morcinek.android.codegenerator.plugin.ui;
 
-import com.google.common.collect.Maps;
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+
+import javax.swing.AbstractAction;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.border.LineBorder;
+
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.ComboBox;
@@ -10,12 +20,6 @@ import com.intellij.ui.CollectionComboBoxModel;
 import com.intellij.ui.JBColor;
 import com.intellij.ui.components.JBScrollPane;
 import com.intellij.ui.components.JBTextField;
-
-import javax.swing.*;
-import javax.swing.border.LineBorder;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.util.Map;
 
 /**
  * Copyright 2014 Tomasz Morcinek. All rights reserved.
@@ -61,6 +65,11 @@ public class CodeDialogBuilder {
                 }
             }
         });
+    }
+
+    public void addUI(JLabel label, JBTextField textField) {
+        topPanel.add(label);
+        topPanel.add(textField);
     }
 
     public void addPackageSection(String defaultText) {

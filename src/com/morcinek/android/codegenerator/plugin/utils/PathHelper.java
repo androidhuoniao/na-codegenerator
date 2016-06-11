@@ -1,9 +1,10 @@
 package com.morcinek.android.codegenerator.plugin.utils;
 
+import org.apache.velocity.util.StringUtils;
+
 import com.morcinek.android.codegenerator.codegeneration.builders.file.ClassNameBuilder;
 import com.morcinek.android.codegenerator.codegeneration.builders.file.PackageBuilder;
 import com.morcinek.android.codegenerator.extractor.string.FileNameExtractor;
-import org.apache.velocity.util.StringUtils;
 
 /**
  * Copyright 2014 Tomasz Morcinek. All rights reserved.

@@ -5,6 +5,7 @@ package com.morcinek.android.codegenerator.plugin.ui;
  */
 public interface StringResources {
 
+    String CREATOR_BEAN_LABEL = "Bean";
     String PACKAGE_LABEL = "Package";
     String SOURCE_PATH_LABEL = "Source Path";
     String TITLE_FORMAT_TEXT = "Code generated from: '%s'";
