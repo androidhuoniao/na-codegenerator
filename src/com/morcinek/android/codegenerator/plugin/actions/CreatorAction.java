@@ -79,7 +79,6 @@ public class CreatorAction extends LayoutAction {
         String packageName = builder.getPackage();
         String beanName = builder.getCreatorBean();
         String modifiedCode = builder.getModifiedCode();
-        System.out.println("bean: " + beanName);
         return CreatorPathHelper.getMergedCode(packageName, beanName, modifiedCode);
     }
 }
